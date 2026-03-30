@@ -132,7 +132,7 @@ export const subscriptionsService = {
       .from('subscriptions')
       .select('active')
       .eq('id', id)
-      .single();
+      .maybeSingle();
 
     const { error } = await supabase
       .from('subscriptions')
@@ -184,7 +184,7 @@ export const leadsService = {
       .from('leads')
       .select('*')
       .eq('id', id)
-      .single();
+      .maybeSingle();
 
     if (!lead) throw new Error('Lead not found');
 
@@ -348,12 +348,37 @@ export const filesService = {
     return result;
   },
 
+  async download(id: string) {
+    const { data: file } = await supabase
+      .from('files')
+      .select('storage_path, name')
+      .eq('id', id)
+      .maybeSingle();
+
+    if (!file?.storage_path) throw new Error('Arquivo não encontrado');
+
+    const { data, error } = await supabase.storage
+      .from('devledger-files')
+      .download(file.storage_path);
+
+    if (error) throw error;
+
+    const url = URL.createObjectURL(data);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = file.name;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  },
+
   async delete(id: string) {
     const { data: file } = await supabase
       .from('files')
       .select('storage_path')
       .eq('id', id)
-      .single();
+      .maybeSingle();
 
     if (file?.storage_path) {
       await supabase.storage

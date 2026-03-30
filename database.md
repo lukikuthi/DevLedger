@@ -211,3 +211,22 @@ ON public.files FOR ALL
 TO authenticated
 USING (user_id = auth.uid())
 WITH CHECK (user_id = auth.uid());
+
+
+-- Upload
+CREATE POLICY "Users can upload own files"
+ON storage.objects FOR INSERT
+TO authenticated
+WITH CHECK (bucket_id = 'devledger-files' AND auth.uid()::text = (storage.foldername(name))[1]);
+
+-- Leitura
+CREATE POLICY "Users can read own files"
+ON storage.objects FOR SELECT
+TO authenticated
+USING (bucket_id = 'devledger-files' AND auth.uid()::text = (storage.foldername(name))[1]);
+
+-- Exclusão
+CREATE POLICY "Users can delete own files"
+ON storage.objects FOR DELETE
+TO authenticated
+USING (bucket_id = 'devledger-files' AND auth.uid()::text = (storage.foldername(name))[1]);

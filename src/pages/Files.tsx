@@ -3,7 +3,7 @@ import { filesService } from '@/services/api';
 import type { FileRecord } from '@/types';
 import { Button } from '@/components/ui/button';
 import EmptyState from '@/components/EmptyState';
-import { Upload, Trash2, FileText, Image, File } from 'lucide-react';
+import { Upload, Trash2, FileText, Image, File, Download } from 'lucide-react';
 
 const formatSize = (bytes: number) => {
   if (bytes < 1024) return `${bytes} B`;
@@ -75,10 +75,16 @@ const Files = () => {
                   </p>
                 </div>
               </div>
-              <button onClick={async () => { await filesService.delete(item.id); load(); }}
-                className="text-muted-foreground hover:text-destructive transition-colors p-1 shrink-0">
-                <Trash2 className="w-3.5 h-3.5" />
-              </button>
+              <div className="flex gap-2">
+                <button onClick={async () => { await filesService.download(item.id); }}
+                  className="text-muted-foreground hover:text-foreground transition-colors p-1 shrink-0">
+                  <Download className="w-3.5 h-3.5" />
+                </button>
+                <button onClick={async () => { await filesService.delete(item.id); load(); }}
+                  className="text-muted-foreground hover:text-destructive transition-colors p-1 shrink-0">
+                  <Trash2 className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           ))}
         </div>
