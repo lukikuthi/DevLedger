@@ -71,9 +71,9 @@ O projeto usa uma paleta minimalista em preto e branco:
 - [x] Modo Profissional completo
 - [x] Autenticação e RLS
 - [x] Storage de arquivos
-- [ ] Integração real com Supabase (atualmente usa mock)
+- [x] Integração real com Supabase (atualmente usa mock)
 - [ ] Gráficos e visualizações
-- [ ] Exportação de relatórios (PDF/CSV)
+- [x] Exportação de relatórios (PDF/CSV)
 - [ ] Dark mode completo
 - [ ] Notificações push
 - [ ] Sincronização offline
