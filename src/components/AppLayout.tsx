@@ -39,7 +39,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
       <aside className="w-60 bg-sidebar border-r border-sidebar-border flex flex-col shrink-0 hidden md:flex">
         <div className="p-4 border-b border-sidebar-border">
           <div className="flex items-center gap-2">
-            <img src="/apple-touch-ico.png" alt="DevLedger" className="w-8 h-8 rounded-lg" />
+            <img src="/DevLedger/apple-touch-ico.png" alt="DevLedger" className="w-8 h-8 rounded-lg" />
             <span className="font-bold text-sidebar-primary-foreground text-sm">DevLedger</span>
           </div>
         </div>
@@ -94,7 +94,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
       {/* Mobile header */}
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-card border-b border-border px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img src="/apple-touch-ico.png" alt="DevLedger" className="w-7 h-7 rounded-lg" />
+          <img src="/DevLedger/apple-touch-ico.png" alt="DevLedger" className="w-7 h-7 rounded-lg" />
           <span className="font-bold text-sm text-foreground">DevLedger</span>
         </div>
         <button onClick={handleLogout} className="text-muted-foreground">
