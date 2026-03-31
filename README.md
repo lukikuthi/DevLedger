@@ -32,31 +32,6 @@ DevLedger é uma aplicação completa de gestão financeira com dois modos disti
 - **Segurança**: Row Level Security (RLS)
 - **Routing**: React Router v6
 
-## Instalação Rápida
-
-```bash
-# Clonar o repositório
-git clone https://github.com/seu-usuario/devledger.git
-cd devledger
-
-# Instalar dependências
-npm install
-
-# Configurar variáveis de ambiente
-cp .env.example .env
-# Edite o .env com suas credenciais do Supabase
-
-# Executar em desenvolvimento
-npm run dev
-```
-
-Acesse http://localhost:8080
-
-## Documentação
-
-- **[SETUP.md](SETUP.md)** - Guia completo de configuração
-- **[DATABASE.md](DATABASE.md)** - Documentação completa do banco de dados
-- **[DEVLEDGER_BACKEND.md](DEVLEDGER_BACKEND.md)** - Documentação original do backend
 
 ## Configuração do Banco de Dados
 
@@ -71,42 +46,6 @@ O projeto usa Supabase como backend. Execute as migrações em ordem:
 7. Projects
 8. Files
 
-Todas as migrações e políticas RLS estão documentadas no arquivo `DATABASE.md`.
-
-## Estrutura do Projeto
-
-```
-devledger/
-├── src/
-│   ├── components/     # Componentes React
-│   │   ├── ui/        # Componentes shadcn/ui
-│   │   ├── AppLayout.tsx
-│   │   ├── EmptyState.tsx
-│   │   ├── ProtectedRoute.tsx
-│   │   └── StatCard.tsx
-│   ├── hooks/         # Hooks customizados
-│   │   └── use-app-state.tsx
-│   ├── pages/         # Páginas da aplicação
-│   │   ├── Login.tsx
-│   │   ├── ModeSelector.tsx
-│   │   ├── Dashboard.tsx
-│   │   ├── Transactions.tsx
-│   │   ├── Subscriptions.tsx
-│   │   ├── Leads.tsx
-│   │   ├── Clients.tsx
-│   │   ├── Projects.tsx
-│   │   └── Files.tsx
-│   ├── services/      # Camada de serviços (API)
-│   │   └── api.ts
-│   ├── types/         # TypeScript types
-│   │   └── index.ts
-│   └── lib/           # Utilitários
-│       └── utils.ts
-├── public/            # Arquivos estáticos
-├── DATABASE.md        # Documentação do DB
-├── SETUP.md           # Guia de setup
-└── README.md          # Este arquivo
-```
 
 ## Paleta de Cores
 
@@ -116,25 +55,6 @@ O projeto usa uma paleta minimalista em preto e branco:
 - **Preto**: Sidebar, texto primário, botões principais
 - **Cinza**: Bordas, estados inativos, texto terciário
 - **Cores de status**: Verde (sucesso), Vermelho (erro), Amarelo (aviso)
-
-## Scripts Disponíveis
-
-```bash
-# Desenvolvimento
-npm run dev
-
-# Build para produção
-npm run build
-
-# Preview da build
-npm run preview
-
-# Testes
-npm run test
-
-# Lint
-npm run lint
-```
 
 ## Segurança
 
@@ -157,16 +77,6 @@ npm run lint
 - [ ] Dark mode completo
 - [ ] Notificações push
 - [ ] Sincronização offline
-
-## Contribuindo
-
-Contribuições são bem-vindas! Por favor:
-
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
 
 ## Licença
 

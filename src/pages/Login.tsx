@@ -57,7 +57,7 @@ const Login = () => {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center mb-4">
-            <img src="/apple-touch-icon.png" alt="DevLedger" className="w-20 h-20 rounded-2xl" />
+            <img src="/apple-touch-ico.png" alt="DevLedger" className="w-20 h-20 rounded-2xl" />
           </div>
           <h1 className="text-2xl font-bold text-foreground">DevLedger</h1>
           <p className="text-muted-foreground mt-1 text-sm">
